@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="16dp">
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="62dp"
+        android:src="@android:drawable/ic_dialog_dialer"
+        />
+
+    <EditText
+        android:id="@+id/elsoEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Első szín"
+        android:inputType="textPersonName"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:drawable/edit_text"
+        />
+
+
+    <EditText
+        android:id="@+id/masodikEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Második szín"
+        android:inputType="textPersonName"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:drawable/edit_text"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/osszeadasButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Összeadás"
+            android:padding="12dp"
+            android:layout_marginBottom="24dp"
+            android:layout_marginRight="12px"
+            />
+        <Button
+            android:id="@+id/torlesButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Törlés"
+            android:padding="12dp"
+            android:layout_marginBottom="24dp"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Eredmény:"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        />
+
+</LinearLayout>
