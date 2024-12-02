@@ -1,5 +1,5 @@
 package com.example.kotlinbasics
-
+// verem 2
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
