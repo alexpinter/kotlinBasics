@@ -114,7 +114,7 @@ class MainActivity : AppCompatActivity() {
         val comment: String
     )
 
-    //----------------------------------------gyak 2-------------------------------
+    //------------------------gyak 2-------------------------------
 
     data class Root1(
         val orderId: String,
