@@ -115,6 +115,7 @@ class MainActivity : AppCompatActivity() {
     )
 
     //------------------------gyak 2-------------------------------
+    //valtoztatas
 
     data class Root1(
         val orderId: String,
