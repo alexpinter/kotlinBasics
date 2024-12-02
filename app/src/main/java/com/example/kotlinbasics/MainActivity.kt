@@ -1,5 +1,5 @@
 package com.example.kotlinbasics
-
+// verem
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.icu.text.CaseMap.Title
