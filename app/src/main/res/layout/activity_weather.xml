@@ -8,11 +8,26 @@
     tools:context=".WeatherActivity">
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Környe időjárása:"
+        android:textSize="20sp"/>
+
+    <TextView
         android:id="@+id/textview_temp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Jelenlegi időjárás itt:"
+        android:text="Jelenlegi hőmérséklet itt:"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/textview_tempMin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Min hőmérséklet:"
         android:textSize="20sp"/>
 
 </LinearLayout>

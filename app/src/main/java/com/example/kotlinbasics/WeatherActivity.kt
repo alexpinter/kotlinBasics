@@ -18,19 +18,15 @@ import retrofit2.converter.gson.GsonConverterFactory
 class WeatherActivity : AppCompatActivity() {
 
     private lateinit var textviewTemp: TextView
+    private lateinit var textviewMinTemp: TextView
     private val apiKey = "7b1187ac79f71d9b4fb5f84c526745c4"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_weather)
-        //ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            //val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-           // v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            //insets
-        //}
-
         textviewTemp = findViewById(R.id.textview_temp)
+        textviewMinTemp = findViewById(R.id.textview_tempMin)
         fetchWeatherData()
 
     }
@@ -54,6 +50,8 @@ class WeatherActivity : AppCompatActivity() {
                     if (weatherResponse != null) {
                         val weatherInfo = weatherResponse.main.temp
                         textviewTemp.text = weatherInfo.toString()
+                        val weatherInfoMin = weatherResponse.main.temp_min
+                        textviewMinTemp.text = weatherInfoMin.toString()
                     }
                 }
 
