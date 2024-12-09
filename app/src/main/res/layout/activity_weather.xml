@@ -7,14 +7,46 @@
     android:gravity="center"
     tools:context=".WeatherActivity">
 
-    <TextView
+    <!-- <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Környe időjárása:"
         android:textStyle="bold"
         android:textSize="30sp"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp"/>  -->
+
+    <EditText
+        android:id="@+id/edittext_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="Add meg a települést"
+        android:layout_marginBottom="30dp"
+        android:inputType="text"
+        android:background="@android:drawable/edit_text"
+    />
+
+    <Button
+        android:id="@+id/button_city"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Keresés"
+        android:layout_marginBottom="36dp"
+        />
+
+    <TextView
+        android:id="@+id/textview_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Időjárási adatok"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        />
+
+
+
 
     <TextView
         android:id="@+id/textview_temp"

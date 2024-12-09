@@ -1,12 +1,13 @@
 package com.example.kotlinbasics
 // verem 2
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.kotlinbasics.model.WeatherResponse
 import com.example.kotlinbasics.network.WeatherService
 import retrofit2.Call
@@ -21,8 +22,13 @@ class WeatherActivity : AppCompatActivity() {
     private lateinit var textviewMinTemp: TextView
     private lateinit var textviewHumidity: TextView
     private lateinit var textviewWindSpeed: TextView
+    private lateinit var edittextCity: EditText
+    private lateinit var buttonCity: Button
+    private lateinit var textviewCity: TextView
+    private var varos = "";
     private val apiKey = "7b1187ac79f71d9b4fb5f84c526745c4"
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -30,12 +36,23 @@ class WeatherActivity : AppCompatActivity() {
         textviewTemp = findViewById(R.id.textview_temp)
         textviewMinTemp = findViewById(R.id.textview_tempMin)
         textviewHumidity = findViewById(R.id.textview_humidity)
-        textviewWindSpeed= findViewById(R.id.textview_windSpeed)
-        fetchWeatherData()
+        textviewWindSpeed = findViewById(R.id.textview_windSpeed)
+        edittextCity = findViewById(R.id.edittext_city)
+        buttonCity = findViewById(R.id.button_city)
+        textviewCity = findViewById(R.id.textview_city)
+
+        buttonCity.setOnClickListener{
+            val cityName = edittextCity.text
+            if (cityName.isNotBlank()){
+                varos = cityName.toString()
+            }
+            fetchWeatherData(varos)
+        }
+
 
     }
 
-    private fun fetchWeatherData(){
+    private fun fetchWeatherData(varos: String) {
         val retrofit = Retrofit.Builder()
             .baseUrl("https://api.openweathermap.org")
             .addConverterFactory(GsonConverterFactory.create())
@@ -43,7 +60,7 @@ class WeatherActivity : AppCompatActivity() {
 
         val weatherService = retrofit.create(WeatherService::class.java)
 
-        val call = weatherService.getWeather("Környe", "metric", apiKey)
+        val call = weatherService.getWeather(varos, "metric", apiKey)
         call.enqueue(object: Callback<WeatherResponse> {
             override fun onResponse(
                 call: Call<WeatherResponse>,
@@ -60,6 +77,7 @@ class WeatherActivity : AppCompatActivity() {
                         textviewHumidity.text = "Páratartalom: " + weatherInfoHumidity.toString()
                         val weatherInfoWind = weatherResponse.wind.speed
                         textviewWindSpeed.text = "Szél sebesség: " + weatherInfoWind.toString() + " Km/h"
+                        textviewCity.text = varos
                     }
                 }
 
