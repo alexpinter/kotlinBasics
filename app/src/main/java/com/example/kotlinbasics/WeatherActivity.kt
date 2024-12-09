@@ -59,7 +59,7 @@ class WeatherActivity : AppCompatActivity() {
                         val weatherInfoHumidity = weatherResponse.main.humidity
                         textviewHumidity.text = "Páratartalom: " + weatherInfoHumidity.toString()
                         val weatherInfoWind = weatherResponse.wind.speed
-                        textviewWindSpeed.text = "Szél sebesség: " + weatherInfoWind.toString() + " km/h"
+                        textviewWindSpeed.text = "Szél sebesség: " + weatherInfoWind.toString() + " Km/h"
                     }
                 }
 
