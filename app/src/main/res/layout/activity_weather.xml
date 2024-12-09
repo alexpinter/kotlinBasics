@@ -12,7 +12,9 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Környe időjárása:"
-        android:textSize="20sp"/>
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:layout_marginBottom="16dp"/>
 
     <TextView
         android:id="@+id/textview_temp"
@@ -28,6 +30,22 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Min hőmérséklet:"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/textview_humidity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Páratartalom:"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/textview_windSpeed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Szélsebesség:"
         android:textSize="20sp"/>
 
 </LinearLayout>

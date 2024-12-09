@@ -19,6 +19,8 @@ class WeatherActivity : AppCompatActivity() {
 
     private lateinit var textviewTemp: TextView
     private lateinit var textviewMinTemp: TextView
+    private lateinit var textviewHumidity: TextView
+    private lateinit var textviewWindSpeed: TextView
     private val apiKey = "7b1187ac79f71d9b4fb5f84c526745c4"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +29,8 @@ class WeatherActivity : AppCompatActivity() {
         setContentView(R.layout.activity_weather)
         textviewTemp = findViewById(R.id.textview_temp)
         textviewMinTemp = findViewById(R.id.textview_tempMin)
+        textviewHumidity = findViewById(R.id.textview_humidity)
+        textviewWindSpeed= findViewById(R.id.textview_windSpeed)
         fetchWeatherData()
 
     }
@@ -49,9 +53,13 @@ class WeatherActivity : AppCompatActivity() {
                     val weatherResponse = response.body()
                     if (weatherResponse != null) {
                         val weatherInfo = weatherResponse.main.temp
-                        textviewTemp.text = weatherInfo.toString()
+                        textviewTemp.text = "Hőmérséklet: " + weatherInfo.toString() + " C"
                         val weatherInfoMin = weatherResponse.main.temp_min
-                        textviewMinTemp.text = weatherInfoMin.toString()
+                        textviewMinTemp.text = "Minimum hőmérséklet: " + weatherInfoMin.toString() + " C"
+                        val weatherInfoHumidity = weatherResponse.main.humidity
+                        textviewHumidity.text = "Páratartalom: " + weatherInfoHumidity.toString()
+                        val weatherInfoWind = weatherResponse.wind.speed
+                        textviewWindSpeed.text = "Szél sebesség: " + weatherInfoWind.toString() + " km/h"
                     }
                 }
 
