@@ -5,16 +5,31 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.kotlinbasics.model.User
+import com.example.myapplication.adapter.UserAdapter
 
 class UserListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_user_list)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+
+        val users = listOf(
+            User("Gipsz Jakab", "gj@gmail.com", R.drawable.user_icon),
+            User("Segg Lyuk", "sly@gmail.com", R.drawable.user_icon),
+            User("Ferenc Géza", "fg@hotmail.com", R.drawable.user_icon),
+            User("Varga Judit", "gj@citromail.com", R.drawable.user_icon),
+            User("Nagy Anna", "gj@freemail.com", R.drawable.user_icon),
+            User("Kovács Péter", "gj@gmail.com", R.drawable.user_icon),
+            User("Gipsz Jakab", "gj@gmail.com", R.drawable.user_icon),
+            User("Gipsz Jakab", "gj@gmail.com", R.drawable.user_icon),
+            User("Gipsz Jakab", "gj@gmail.com", R.drawable.user_icon),
+            User("Gipsz Jakab", "gj@gmail.com", R.drawable.user_icon)
+        )
+
+        val recyclerView: RecyclerView = findViewById(R.id.userListRecyclerview)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = UserAdapter(users)
     }
 }

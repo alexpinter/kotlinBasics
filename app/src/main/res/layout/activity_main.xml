@@ -31,6 +31,17 @@
         android:layout_height="wrap_content"
         android:text="Időjárás"
         android:padding="12dp"
+        android:layout_marginBottom="24dp"
         />
+
+    <Button
+        android:id="@+id/openUserListButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Felhasználók listája"
+        android:padding="12dp"
+        />
+
+
 
 </LinearLayout>
