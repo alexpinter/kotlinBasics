@@ -256,7 +256,7 @@ class MainActivity : AppCompatActivity() {
 //            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
 //            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
 //            insets
-//        }fd
+//        }fdd
 
         //ui elemek inicializálása
         openGreetingButton = findViewById(R.id.openGreetingButton)
