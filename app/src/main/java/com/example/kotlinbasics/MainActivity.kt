@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var openCalculatorButton: Button
     private lateinit var openWeatherButton: Button
     private lateinit var openUserListButton: Button
+    private lateinit var openRandomUserListButton: Button
 /*-----------------------------------------------------------------
     data class Root(
         val universityName: String,
@@ -263,6 +264,7 @@ class MainActivity : AppCompatActivity() {
         openCalculatorButton = findViewById(R.id.openCalcultorButton)
         openWeatherButton = findViewById(R.id.openWeatherButton)
         openUserListButton = findViewById(R.id.openUserListButton)
+        openRandomUserListButton = findViewById(R.id.openRandomUserListButton)
 
         openGreetingButton.setOnClickListener(){
             //intent létrehozása és activity indítása
@@ -283,6 +285,11 @@ class MainActivity : AppCompatActivity() {
         openUserListButton.setOnClickListener(){
             //intent létrehozása és activity indítása
             val intent = Intent(this,UserListActivity::class.java)
+            startActivity(intent)
+        }
+        openRandomUserListButton.setOnClickListener(){
+            //intent létrehozása és activity indítása
+            val intent = Intent(this,RandomUserListActivity::class.java)
             startActivity(intent)
         }
 
