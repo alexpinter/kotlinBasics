@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:text="Köszöntés megnyitása!"
         android:padding="12dp"
-        android:layout_marginTop="400px"
+        android:layout_marginTop="350px"
         android:layout_marginBottom="24dp"
         />
 
@@ -48,6 +48,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Random felhasználók listája"
+        android:padding="12dp"
+        android:layout_marginBottom="24dp"
+        />
+
+    <Button
+        android:id="@+id/openColorButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Színek listája"
         android:padding="12dp"
         />
 

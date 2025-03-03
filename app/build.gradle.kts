@@ -53,7 +53,6 @@ dependencies {
     implementation(libs.okhttp)
 
     implementation(libs.glide)
-    implementation(libs.glide.compiler)
     kapt(libs.glide.compiler)
 
 }
